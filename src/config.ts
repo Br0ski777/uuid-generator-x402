@@ -33,6 +33,16 @@ Do NOT use for hashing -- use crypto_generate_hash instead. Do NOT use for passw
         },
         required: [],
       },
+      outputSchema: {
+        type: "object",
+        properties: {
+          format: { type: "string", description: "Format used (uuidv4, uuidv7, ulid, nanoid)" },
+          count: { type: "number", description: "Number of IDs generated" },
+          ids: { type: "array", items: { type: "string" }, description: "Array of generated identifiers" },
+          length: { type: "number", description: "Character length of each ID (for nanoid)" },
+        },
+        required: ["format", "count", "ids"],
+      },
     },
   ],
 };
