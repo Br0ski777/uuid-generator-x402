@@ -3,7 +3,7 @@ import type { ApiConfig } from "./shared";
 export const API_CONFIG: ApiConfig = {
   name: "uuid-generator",
   slug: "uuid-generator",
-  description: "Generate UUIDs v4, v7, ULID, and nanoid. Batch generation support.",
+  description: "Generate UUID v4, v7, ULID, or nanoid identifiers. Batch up to 100 at once. Sortable, compact, or random formats.",
   version: "1.0.0",
   routes: [
     {
@@ -12,7 +12,18 @@ export const API_CONFIG: ApiConfig = {
       price: "$0.001",
       description: "Generate unique identifiers",
       toolName: "utility_generate_uuid",
-      toolDescription: "Use this when you need to generate unique identifiers. Supports UUID v4 (random), UUID v7 (time-ordered), ULID (sortable), and nanoid (compact). Batch generation up to 100. Do NOT use for hashing — use crypto_generate_hash instead. Do NOT use for password generation — use security_check_password instead.",
+      toolDescription: `Use this when you need to generate unique identifiers for database records, API keys, or session tokens. Returns an array of IDs in the chosen format.
+
+1. ids -- array of generated identifiers (strings)
+2. format -- the format used (uuidv4, uuidv7, ulid, nanoid)
+3. count -- number of IDs generated
+4. length -- character length of each ID (relevant for nanoid)
+
+Example output: {"ids":["550e8400-e29b-41d4-a716-446655440000"],"format":"uuidv4","count":1}
+
+Use this FOR creating primary keys, correlation IDs, or unique file names. Use uuidv7 or ulid WHEN you need time-sortable IDs for databases. Use nanoid FOR short URL-safe tokens.
+
+Do NOT use for hashing -- use crypto_generate_hash instead. Do NOT use for password generation -- use security_check_password instead. Do NOT use for slug generation -- use text_generate_slug instead.`,
       inputSchema: {
         type: "object",
         properties: {
