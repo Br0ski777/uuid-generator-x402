@@ -1,1 +1,18 @@
-{"$schema":"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json","name":"io.github.Br0ski777/uuid-generator","title":"UUID Generator API","description":"Generate UUIDs v4, v7, ULID, nanoid. Batch support. x402 micropayment.","version":"1.0.0","websiteUrl":"https://github.com/Br0ski777/uuid-generator-x402","repository":{"url":"https://github.com/Br0ski777/uuid-generator-x402","source":"github"},"remotes":[{"type":"sse","url":"https://PLACEHOLDER.up.railway.app/mcp"}]}
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Br0ski777/uuid-generator",
+  "title": "UUID Generator API",
+  "description": "Generate UUIDs v4, v7, ULID, nanoid. Batch support. x402 micropayment.",
+  "version": "1.0.0",
+  "websiteUrl": "https://github.com/Br0ski777/uuid-generator-x402",
+  "repository": {
+    "url": "https://github.com/Br0ski777/uuid-generator-x402",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "sse",
+      "url": "https://uuid-generator-production.up.railway.app/mcp"
+    }
+  ]
+}
