@@ -9,7 +9,7 @@ export const API_CONFIG: ApiConfig = {
     {
       method: "POST",
       path: "/api/generate",
-      price: "$0.001",
+      price: "$0.003",
       description: "Generate unique identifiers",
       toolName: "utility_generate_uuid",
       toolDescription: `Use this when you need to generate unique identifiers for database records, API keys, or session tokens. Returns an array of IDs in the chosen format.
